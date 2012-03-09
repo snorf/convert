@@ -188,15 +188,25 @@ for (var i = inputFields.length - 1; i >= 0; i--) {
 };
 
 var div;
+var innerdiv;
 function askForInput() {
   div = document.createElement('div');
-  div.innerHTML = "<form id='larsabrasha_form' onsubmit='return false;'><input type='password' id='larsabrasha_input'/><select id='larsabrasha_length' name='length' title='What length should your password be?'><optgroup label='Recommended Lengths'><option selected='selected' value='21'>21</option><option value='11'>11</option></optgroup><optgroup label='Other Lengths'><option value='21'>21</option><option value='26'>26</option><option value='40'>40</option></optgroup></select><input type='submit' onclick='convert();return false;' value='Convert and insert'/></form>";
+  var s=document.createElement('link');
+  s.setAttribute('href','https://superfredag.com/glasspane.css');
+  s.setAttribute('rel','stylesheet');
+  s.setAttribute('type','text/css');
+  document.getElementsByTagName('head')[0].appendChild(s);
+  div.id = "top-layer";
+  innerdiv = document.createElement('div');
+  innerdiv.id = "inner-layer";
+  innerdiv.innerHTML = "<form id='convert_form' onsubmit='return false;'><input type='password' id='convert_input'/><input type='submit' onclick='convert(21);return false;' value='21'/><input type='submit' onclick='convert(11);return false;' value='11'/><input type='submit' onclick='convert(26);return false;' value='26'/>";
   document.body.appendChild(div);
-  document.getElementById('larsabrasha_input').focus();
+  document.getElementById("top-layer").appendChild(innerdiv);
+  document.getElementById('convert_input').focus();
 }
 
-function convert() {
-  inputField.value = firstCharacters(SHA1(document.getElementById('larsabrasha_input').value),document.getElementById('larsabrasha_length').value);
+function convert(length) {
+  inputField.value = firstCharacters(SHA1(document.getElementById('convert_input').value),length);
   document.body.removeChild(div);
   inputField.focus();
 }
