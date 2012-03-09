@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<HTML>
+  <HEAD>
+    <TITLE>Convert</TITLE>
+    <meta name="viewport" content="width = 300" />
+    <meta name="viewport" content="user-scalable=no" />
+    <SCRIPT LANGUAGE="JavaScript">
+function performConvert() {
+    var sha1 = firstCharacters(SHA1(document.getElementById('input').value),document.getElementById('length').value);
+    //document.getElementById('output').value = sha1;   
+    copyToClipboard(sha1);
+}
+
+function copyToClipboard (text) {
+  window.prompt ("Copy to clipboard: Ctrl+C, Enter", text);
+  document.getElementById('input').value = "";
+}
+</SCRIPT>
+<script type="text/javascript" src="convert.js"></script>
+</HEAD>
+<BODY>
+    <form id="form" onsubmit="return false;">
+      <input type="password" id="input"/>
+      <select id="length" name="length" title="What length should your password be?">
+        <optgroup label="Recommended Lengths">
+          <option selected="selected" value="21">21</option>
+          <option value="11">11</option>
+        </optgroup>
+        <optgroup label="Other Lengths">
+          <option value="21">21</option>
+          <option value="26">26</option>
+          <option value="40">40</option>
+        </optgroup>
+      </select>
+      <input type="submit" onclick="performConvert()" value="Convert and insert"/>
+      <br/>
+    </form>
+  </BODY>
+</HTML>
