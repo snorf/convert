@@ -5,31 +5,18 @@
 *
 * javascript:(function()%7Bvar%20s%20=%20document.createElement(%22script%22);%20s.src%20=%20%22http://hildingtheturtle.com/convert.js%22;%20void(document.body.appendChild(s));%7D)()
 **/
+var t4, str, vh, vl, v, utftext, n, c, blockstart, i, j, W, H0, H1, H2, H3, H4, A, B, C, D, E, temp, msg_len, word_array, inputFields, inputField, div, innerdiv, s;
 function SHA1 (msg) {
 
 	function rotate_left(n,s) {
-		var t4 = ( n<<s ) | (n>>>(32-s));
+		t4 = ( n<<s ) | (n>>>(32-s));
 		return t4;
 	};
 
-	function lsb_hex(val) {
-		var str="";
-		var i;
-		var vh;
-		var vl;
-
-		for( i=0; i<=6; i+=2 ) {
-			vh = (val>>>(i*4+4))&0x0f;
-			vl = (val>>>(i*4))&0x0f;
-			str += vh.toString(16) + vl.toString(16);
-		}
-		return str;
-	};
-
 	function cvt_hex(val) {
-		var str="";
-		var i;
-		var v;
+		str="";
+		i;
+		v;
 
 		for( i=7; i>=0; i-- ) {
 			v = (val>>>(i*4))&0x0f;
@@ -41,11 +28,11 @@ function SHA1 (msg) {
 
 	function Utf8Encode(string) {
 		string = string.replace(/\r\n/g,"\n");
-		var utftext = "";
+		utftext = "";
 
-		for (var n = 0; n < string.length; n++) {
+		for (n = 0; n < string.length; n++) {
 
-			var c = string.charCodeAt(n);
+			c = string.charCodeAt(n);
 
 			if (c < 128) {
 				utftext += String.fromCharCode(c);
@@ -65,22 +52,22 @@ function SHA1 (msg) {
 		return utftext;
 	};
 
-	var blockstart;
-	var i, j;
-	var W = new Array(80);
-	var H0 = 0x67452301;
-	var H1 = 0xEFCDAB89;
-	var H2 = 0x98BADCFE;
-	var H3 = 0x10325476;
-	var H4 = 0xC3D2E1F0;
-	var A, B, C, D, E;
-	var temp;
+	blockstart;
+	i, j;
+	W = new Array(80);
+	H0 = 0x67452301;
+	H1 = 0xEFCDAB89;
+	H2 = 0x98BADCFE;
+	H3 = 0x10325476;
+	H4 = 0xC3D2E1F0;
+	A, B, C, D, E;
+	temp;
 
 	msg = Utf8Encode(msg);
 
-	var msg_len = msg.length;
+	msg_len = msg.length;
 
-	var word_array = new Array();
+	word_array = new Array();
 	for( i=0; i<msg_len-3; i+=4 ) {
 		j = msg.charCodeAt(i)<<24 | msg.charCodeAt(i+1)<<16 |
 		msg.charCodeAt(i+2)<<8 | msg.charCodeAt(i+3);
@@ -167,7 +154,7 @@ function SHA1 (msg) {
 
 	}
 
-	var temp = cvt_hex(H0) + cvt_hex(H1) + cvt_hex(H2) + cvt_hex(H3) + cvt_hex(H4);
+	temp = cvt_hex(H0) + cvt_hex(H1) + cvt_hex(H2) + cvt_hex(H3) + cvt_hex(H4);
 
 	return temp.toLowerCase();
 
@@ -177,9 +164,9 @@ function firstCharacters(s,n) {
 	return s.substring(0,n);
 }
 
-var inputFields = document.getElementsByTagName('input');
-var inputField;
-for (var i = inputFields.length - 1; i >= 0; i--) {
+inputFields = document.getElementsByTagName('input');
+inputField;
+for (i = inputFields.length - 1; i >= 0; i--) {
   if (inputFields[i].value == '-') {
     inputField = inputFields[i];
     askForInput();
@@ -187,11 +174,11 @@ for (var i = inputFields.length - 1; i >= 0; i--) {
   }
 };
 
-var div;
-var innerdiv;
+div;
+innerdiv;
 function askForInput() {
   div = document.createElement('div');
-  var s=document.createElement('link');
+  s=document.createElement('link');
   s.setAttribute('href','https://superfredag.com/glasspane.css');
   s.setAttribute('rel','stylesheet');
   s.setAttribute('type','text/css');
