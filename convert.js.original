@@ -179,7 +179,7 @@ innerdiv;
 function askForInput() {
   div = document.createElement('div');
   s=document.createElement('link');
-  s.setAttribute('href','https://superfredag.com/glasspane.css');
+  s.setAttribute('href','https://superfredag.com/convert.css');
   s.setAttribute('rel','stylesheet');
   s.setAttribute('type','text/css');
   document.getElementsByTagName('head')[0].appendChild(s);

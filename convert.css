@@ -7,15 +7,37 @@
     padding: 0;
     top: 0;
     left: 0;
-    opacity: 0.7;
+    opacity: 0.75;
     background-color: black;
     z-index: 99999;
 }
 
 #inner-layer {
-    margin-left: 10%;
+    margin-left: 5%;
     margin-right: 10%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 10%;
 }
 
+input[type=text]				{ border-width:1px; border-style:solid; font-size:8pt; height:14px; padding-left:3px; padding-right:3px; }
+input[type=password]			{ border-width:1px; border-style:solid; font-size:8pt; height:14px; padding-left:3px; padding-right:3px;}
+input[type=button]				{ display:inline-block; border-width:1px; border-style:solid; font-size:7pt; height:18px; line-height:16px; padding:0px 9px 2px 9px; margin:0px; font-weight:bold; text-transform:uppercase; font-family:tahoma; text-align:center; cursor:pointer; border-radius:4px; }
+input[type=submit]				{ display:inline-block; border-width:1px; border-style:solid; font-size:7pt; height:18px; line-height:16px; padding:0px 9px 2px 9px; margin:0px; font-weight:bold; text-transform:uppercase; font-family:tahoma; text-align:center; cursor:pointer; border-radius:4px; }
+
+body								{ background-color:black; }
+
+/*	TEXT*/
+body,
+textarea,
+select,
+input[type=text],
+input[type=password]				{ color:#FFFFFF; }
+/*	INPUT*/
+textarea,
+select,
+input[type=text],
+input[type=password]				{ border-color:#444444; background-color:#000000; }
+/*	BUTTON*/
+input[type=submit],
+input[type=button],
+a.fbutton							{ border-color:#000000; background-color:#eead1b; color:#000000; text-shadow: 1px 1px 0px #f7d68d; }
