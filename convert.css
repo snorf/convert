@@ -1,43 +1,5 @@
-#top-layer {
-    position: fixed;
-    color: red;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    opacity: 0.75;
-    background-color: black;
-    z-index: 99999;
-}
+#convert-top-layer {position:fixed; width:100%; height:100%; margin:0; padding:0; top:0; left:0; background-color:rgba(0,0,0,0.8); z-index:99999}
+#convert-inner-layer {width:320px; margin:10px auto; text-align:center}
+#convert_input {height: 26px !important;}
+.convert-button {height: 30px; border: 1px solid #ccc; border-bottom: 1px solid #bbb; background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc)); -webkit-border-radius: 3px; color: #333; line-height: 1; padding: 8px; text-align: center; text-shadow: 0 1px 0 #eee;} .convert-button:active {border: 1px solid #aaa; -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 0 0 0 #eeeeee;}
 
-#inner-layer {
-    margin-left: 5%;
-    margin-right: 10%;
-    margin-top: 5%;
-    margin-bottom: 10%;
-}
-
-input[type=text]				{ border-width:1px; border-style:solid; font-size:8pt; height:14px; padding-left:3px; padding-right:3px; }
-input[type=password]			{ border-width:1px; border-style:solid; font-size:8pt; height:14px; padding-left:3px; padding-right:3px;}
-input[type=button]				{ display:inline-block; border-width:1px; border-style:solid; font-size:7pt; height:18px; line-height:16px; padding:0px 9px 2px 9px; margin:0px; font-weight:bold; text-transform:uppercase; font-family:tahoma; text-align:center; cursor:pointer; border-radius:4px; }
-input[type=submit]				{ display:inline-block; border-width:1px; border-style:solid; font-size:7pt; height:18px; line-height:16px; padding:0px 9px 2px 9px; margin:0px; font-weight:bold; text-transform:uppercase; font-family:tahoma; text-align:center; cursor:pointer; border-radius:4px; }
-
-body								{ background-color:black; }
-
-/*	TEXT*/
-body,
-textarea,
-select,
-input[type=text],
-input[type=password]				{ color:#FFFFFF; }
-/*	INPUT*/
-textarea,
-select,
-input[type=text],
-input[type=password]				{ border-color:#444444; background-color:#000000; }
-/*	BUTTON*/
-input[type=submit],
-input[type=button],
-a.fbutton							{ border-color:#000000; background-color:#eead1b; color:#000000; text-shadow: 1px 1px 0px #f7d68d; }
