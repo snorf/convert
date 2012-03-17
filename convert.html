@@ -2,9 +2,9 @@
 <HTML>
   <HEAD>
     <TITLE>Convert</TITLE>
-    <link rel="stylesheet" href="convert.css">
-    <meta name="viewport" content="width = 300" />
-    <meta name="viewport" content="user-scalable=no" />
+    <link rel="stylesheet" href="convert.css"/>
+    <meta name="viewport" content="width = 300"/>
+    <meta name="viewport" content="user-scalable=no"/>
     <SCRIPT LANGUAGE="JavaScript">
 function performConvertPopup(length) {    
     var sha1 = convert_namespace.convertFromExternal(document.getElementById('input').value,length);
@@ -21,26 +21,26 @@ function copyToClipboard (text) {
   document.getElementById('input').value = "";
 }
 </SCRIPT>
-<script type="text/javascript" src="convert.minified.js"></script>
-</HEAD>
-<BODY>
+    <script type="text/javascript" src="convert.minified.js"/>
+  </HEAD>
+  <BODY>
     <div id="convert-top-layer">
-    <div id="convert-inner-layer">
-    <form id="form" onsubmit="return false;">
-      <input type="password" style="width:210px" id="input"/>
-      <br/>
-      <input type="submit" onclick="performConvertPopup(21)" value="21"/>
-      <input type="submit" onclick="performConvertPopup(11)" value="11"/>
-      <input type="submit" onclick="performConvertPopup(26)" value="26"/>
-      <br/>
-      <input type="submit" onclick="performConvert(21)" value="21"/>
-      <input type="submit" onclick="performConvert(11)" value="11"/>
-      <input type="submit" onclick="performConvert(26)" value="26"/>
-      <br/>
-      <br/>
-      <input type="text" style="width:210px" id="output"/>
-    </form>
-   </div>
-   </div>
+      <div id="convert-inner-layer">
+        <form id="form" onsubmit="return false;">
+          <input type="password" style="width:210px" id="input"/>
+          <br/>
+          <input type="submit" onclick="performConvertPopup(21)" value="21"/>
+          <input type="submit" onclick="performConvertPopup(11)" value="11"/>
+          <input type="submit" onclick="performConvertPopup(26)" value="26"/>
+          <br/>
+          <input type="submit" onclick="performConvert(21)" value="21"/>
+          <input type="submit" onclick="performConvert(11)" value="11"/>
+          <input type="submit" onclick="performConvert(26)" value="26"/>
+          <br/>
+          <br/>
+          <input type="text" style="width:210px" id="output"/>
+        </form>
+      </div>
+    </div>
   </BODY>
 </HTML>
